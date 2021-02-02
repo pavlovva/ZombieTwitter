@@ -5,17 +5,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-
+<form action="/logout" method="post">
+    <div><input type="hidden" name="_csrf" value="{{_csrf.token}}" /></div>
+    <input type="submit" value="Sign Out"/>
+</form>
 <div>
     <form method="post">
         <input type="text" name="text" placeholder="Введите сообщение">
         <input type="text" name="tag" placeholder="Введите тэг">
+        <div><input type="hidden" name="_csrf" value="{{_csrf.token}}" /></div>
         <button type="submit">Добавить</button>
     </form>
 </div>
 <div style="padding-top: 10px; padding-bottom: 10px">Список сообщений:</div>
 <form method="post" action="filter">
     <input type="text" name="filter">
+    <div><input type="hidden" name="_csrf" value="{{_csrf.token}}" /></div>
     <button type="submit">Найти</button>
 </form>
 {{#messages}}
