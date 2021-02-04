@@ -1,4 +1,4 @@
-package org.example.ZombieTwitter.domain.repos;
+package org.example.ZombieTwitter.repos;
 
 import org.example.ZombieTwitter.domain.Message;
 import org.springframework.data.repository.CrudRepository;

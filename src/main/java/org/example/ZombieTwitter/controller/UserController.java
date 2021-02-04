@@ -2,7 +2,7 @@ package org.example.ZombieTwitter.controller;
 
 import org.example.ZombieTwitter.domain.Role;
 import org.example.ZombieTwitter.domain.User;
-import org.example.ZombieTwitter.domain.repos.UserRepo;
+import org.example.ZombieTwitter.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;

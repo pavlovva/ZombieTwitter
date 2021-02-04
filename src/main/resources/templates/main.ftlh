@@ -44,10 +44,10 @@
                 </#if>
                 <div class="m-2">
                     <span>${message.text}</span>
-                    <i>${message.tag}</i>
                 </div>
                 <div class="card-footer text-muted">
-                    ${message.authorName}
+                    Author: ${message.authorName}</br>
+                    Tag: <strong>${message.tag}</strong>
                 </div>
             </div>
         <#else>

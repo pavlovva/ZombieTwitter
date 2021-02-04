@@ -2,7 +2,7 @@ package org.example.ZombieTwitter.controller;
 
 import org.example.ZombieTwitter.domain.Message;
 import org.example.ZombieTwitter.domain.User;
-import org.example.ZombieTwitter.domain.repos.MessageRepo;
+import org.example.ZombieTwitter.repos.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
