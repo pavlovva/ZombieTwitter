@@ -1,13 +1,20 @@
 package org.example.ZombieTwitter.domain;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotBlank(message = "Заполните сообщение")
+    @Length(max = 2048, message = "Слишком длинное сообщение")
     private String text;
+    @Length(max = 50, message = "Слишком длинный тэг")
     private String tag;
 
 

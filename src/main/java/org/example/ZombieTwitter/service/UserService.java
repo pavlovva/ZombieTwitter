@@ -1,5 +1,6 @@
 package org.example.ZombieTwitter.service;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.StringUtils;
 import org.example.ZombieTwitter.domain.Role;
 import org.example.ZombieTwitter.domain.User;
@@ -21,10 +22,18 @@ public class UserService implements UserDetailsService {
     @Autowired
     private MailSender mailSender;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException  {
+        User user = userRepo.findByUsername(username);
 
-        return userRepo.findByUsername(username);
+        if (user == null){
+            throw new UsernameNotFoundException("Пользователь не найден");
+        }
+
+        return user;
     }
 
     public boolean addUser(User user){
@@ -38,6 +47,7 @@ public class UserService implements UserDetailsService {
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
         user.setActivationCode(UUID.randomUUID().toString());
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         userRepo.save(user);
 
