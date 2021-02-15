@@ -1,2 +1,1 @@
 # ZombieTwitter
-Заполню позже :)
